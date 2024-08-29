@@ -1,0 +1,75 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 90px);
+    grid-template-rows: repeat(5, 90px);
+    gap: 5px;
+    margin-bottom: 20px;
+    align-items: "center";
+    text-align: "center";
+}
+
+
+
+.grid-cell {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-block: 3px;
+}
+
+.robot {
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+.direction-arrow {
+    position: absolute;
+    top: -15px;
+    /* Adjust as needed */
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.direction-arrow {
+    font: "14px";
+}
+
+.left {
+    transform: rotate(0);
+}
+
+.down {
+    transform: rotate(-90deg);
+}
+
+.up {
+    transform: rotate(90deg);
+}
+
+.right {
+    transform: rotate(-180deg);
+}
+
+@keyframes rotateArrow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.arrow-transition {
+    transition: left 0.5s ease, top 0.5s ease, right 0.5s ease, bottom 0.5s ease;
+}
+
+.arrow-rotate {
+    animation: rotateArrow 0.5s linear;
+}
